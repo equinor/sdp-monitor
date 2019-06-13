@@ -2,7 +2,6 @@ import React from 'react';
 import styled from 'styled-components';
 import Iframe from 'react-iframe';
 import { Grid, Col, Row } from 'react-styled-flexboxgrid';
-import ReactIframeResizer from 'react-iframe-resizer-super';
 
 const AppContainer = styled.div`
   margin-top: 1em;
