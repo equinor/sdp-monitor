@@ -40,7 +40,7 @@ class App extends React.Component {
                             <Seperator />
                             <Widget>
                                 <Iframe
-                                    url="https://sensu-dashboard.sdp.equinor.com"
+                                    url="https://sensu.sdpaks.equinor.com"
                                     id="something"
                                     width="100%"
                                     height="500px" />
