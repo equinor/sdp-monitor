@@ -7,12 +7,14 @@ on:
     paths:
     - 'src/*'
     - package.json
+    - yarn.lock
     - '.github/workflows/web-docker-image.yml'
   pull_request:
     branches: [ master, actions-trigger ]
     paths:
     - 'src/*'
     - package.json
+    - yarn.lock
     - '.github/workflows/web-docker-image.yml'
 jobs:
 
