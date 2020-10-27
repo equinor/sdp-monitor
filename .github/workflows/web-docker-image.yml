@@ -1,0 +1,30 @@
+name: 'Release-aware web Docker image create & push'
+
+on:
+  workflow_dispatch:
+  push:
+    branches: [ master]
+    paths:
+    - 'src/*'
+    - package.json
+    - '.github/workflows/web-docker-image.yml'
+  pull_request:
+    branches: [ master, actions-trigger ]
+    paths:
+    - 'src/*'
+    - package.json
+    - '.github/workflows/web-docker-image.yml'
+jobs:
+
+  build-and-push-web-image:
+
+    runs-on: ubuntu-latest
+
+    steps:
+    - uses: actions/checkout@v2
+    - name: Build the Docker image
+      run: |
+        docker build . --file Dockerfile --tag sdpequinor/monitor:latest
+        echo ${{ secrets.DOCKERHUB_PAT }} | docker login -u ${{ secrets.DOCKERHUB_USERNAME }} --password-stdin
+        docker push sdpequinor/monitor:latest
+        docker logout
