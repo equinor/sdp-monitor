@@ -2,7 +2,7 @@ version: '3.4'
 
 services:  
   client:
-    image: sdpequinor/monitor:latest
+    image: sdpequinor/monitor:1.7
     restart: unless-stopped
     build:
       context: .
